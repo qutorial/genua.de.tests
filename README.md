@@ -1,21 +1,45 @@
-Requirements:
+# Installing it on Ubuntu
 
-Ruby ruby-1.9.3
-Bundler
+Install Ruby and libraries:
+```
+sudo apt-get install git-core curl zlib1g-dev build-essential lib ssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4- openssl-dev python-software-properties libffi-dev nodejs ruby-dev ruby 
+sudo gem install bundler
+```
 
-Usage of the Cucumber test
+Check that you have Ruby 2.2 or later
+```
+$ ruby --version
+ruby 2.2.6p396 (2016-11-15 revision 56800) [x86_64-linux]
+```
 
-bundle exec cucumber features/logout_form.feature --format html --out reports/report.html
 
-Usecases:
+Clone this and cd into it then 
+```
+bundle install
+```
 
-	Accounts
-		01 Site available
+Get the gecko driver for firefox:
+```
+# Update link and version in the script first!
+./install_gecko_driver.sh
+# This downloads geckodriver and sets up PATH
+# You can try that it works ./geckodriver
+```
 
-# Remark
+Install the latest firefox:
+```
+sudo apt-add-repository ppa:mozillateam/firefox-next
+sudo apt-get update
+sudo apt-get install firefox
+```
 
-The AJAX API seems to be very slow.
-Adding Capybara.default_wait_time = 5 to env.rb might help
+Then you are ready to run the tests:
+```
+# source ./set_up_path.sh  - if you need it, otherwise selenium driver not installed error
+bundle exec cucumber
+```
+
+
 
 # Credits
 

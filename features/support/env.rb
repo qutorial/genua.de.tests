@@ -9,7 +9,6 @@ require 'capybara/session'
 require "selenium-webdriver"
 
 Capybara.default_driver = :selenium
-Capybara.default_wait_time = 5
 
 
 at_exit do
