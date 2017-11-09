@@ -21,7 +21,7 @@ bundle install
 Get the gecko driver for firefox:
 ```
 # Update link and version in the script first!
-./install_gecko_driver.sh
+source install_gecko_driver.sh
 # This downloads geckodriver and sets up PATH
 # You can try that it works ./geckodriver
 ```
@@ -35,7 +35,7 @@ sudo apt-get install firefox
 
 Then you are ready to run the tests:
 ```
-# source ./set_up_path.sh  - if you need it, otherwise selenium driver not installed error
+source ./set_up_path.sh #  - if you need it, otherwise selenium driver not installed error
 bundle exec cucumber
 ```
 
