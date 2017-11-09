@@ -4,6 +4,8 @@ module NavigationHelpers
      case page_name
      when /home/
        base_url + ""
+     when /loesungen/
+       base_url + "loesungen.html"
      else  
        raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
        "Now, go and add a mapping in #{__FILE__}"
